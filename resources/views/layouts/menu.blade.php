@@ -215,13 +215,13 @@
             <i class="c-sidebar-nav-icon bi bi-people" style="line-height: 1;"></i> Parties
         </a>
         <ul class="c-sidebar-nav-dropdown-items">
-            @can('access_customers')
+            <!-- @can('access_customers')
                 <li class="c-sidebar-nav-item">
                     <a class="c-sidebar-nav-link {{ request()->routeIs('customers.*') ? 'c-active' : '' }}" href="{{ route('customers.index') }}">
                         <i class="c-sidebar-nav-icon bi bi-people-fill" style="line-height: 1;"></i> Customers
                     </a>
                 </li>
-            @endcan
+            @endcan -->
             @can('access_suppliers')
                 <li class="c-sidebar-nav-item">
                     <a class="c-sidebar-nav-link {{ request()->routeIs('suppliers.*') ? 'c-active' : '' }}" href="{{ route('suppliers.index') }}">
