@@ -8,7 +8,7 @@
     <title>Reset password | {{ config('app.name') }}</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('images/logo.jpg') }}">
+    <link rel="icon" href="{{ asset('images/logo1.jpg') }}">
     <!-- CoreUI CSS -->
     <link rel="stylesheet" href="css/app.css" crossorigin="anonymous">
     <!-- Font Awesome -->

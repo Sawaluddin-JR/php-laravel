@@ -8,7 +8,7 @@
     <title>Register | {{ config('app.name') }}</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('images/favicon.png') }}">
+    <link rel="icon" href="{{ asset('images/logo1.jpg') }}">
     <!-- CoreUI CSS -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}" crossorigin="anonymous">
     <!-- Bootstrap Icons -->

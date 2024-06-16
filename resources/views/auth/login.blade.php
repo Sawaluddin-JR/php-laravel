@@ -8,7 +8,7 @@
     <title>Login | {{ config('app.name') }}</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('images/logo.jpg') }}">
+    <link rel="icon" href="{{ asset('images/logo1.jpg') }}">
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
