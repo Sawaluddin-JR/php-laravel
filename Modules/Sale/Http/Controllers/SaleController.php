@@ -100,7 +100,7 @@ class SaleController extends Controller
             }
         });
 
-        toast('Sale Created!', 'success');
+        toast('Penjualan Berhasil diTambahkan!', 'success');
 
         return redirect()->route('sales.index');
     }
@@ -215,7 +215,7 @@ class SaleController extends Controller
             Cart::instance('sale')->destroy();
         });
 
-        toast('Sale Updated!', 'info');
+        toast('Penjualan Berhasil diUbah!', 'info');
 
         return redirect()->route('sales.index');
     }
@@ -226,7 +226,7 @@ class SaleController extends Controller
 
         $sale->delete();
 
-        toast('Sale Deleted!', 'warning');
+        toast('Penjualan Berhasil diHapus!', 'warning');
 
         return redirect()->route('sales.index');
     }

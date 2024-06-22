@@ -49,8 +49,6 @@ class SalesDataTable extends DataTable
                                 <'row'<'col-md-5'i><'col-md-7 mt-2'p>>")
             ->orderBy(8)
             ->buttons(
-                Button::make('excel')
-                    ->text('<i class="bi bi-file-earmark-excel-fill"></i> Excel'),
                 Button::make('print')
                     ->text('<i class="bi bi-printer-fill"></i> Print'),
                 Button::make('reset')
@@ -63,25 +61,27 @@ class SalesDataTable extends DataTable
     protected function getColumns() {
         return [
             Column::make('reference')
-                ->className('text-center align-middle'),
-
-            Column::make('customer_name')
-                ->title('Customer')
+                ->title('Referensi')
                 ->className('text-center align-middle'),
 
             Column::computed('status')
+                ->title('Status')
                 ->className('text-center align-middle'),
 
             Column::computed('total_amount')
+                ->title('Total')
                 ->className('text-center align-middle'),
 
             Column::computed('paid_amount')
+                ->title('Dibayar')
                 ->className('text-center align-middle'),
 
             Column::computed('due_amount')
+                ->title('Sisa Bayar')
                 ->className('text-center align-middle'),
 
             Column::computed('payment_status')
+                ->title('Status Pembayaran')
                 ->className('text-center align-middle'),
 
             Column::computed('action')

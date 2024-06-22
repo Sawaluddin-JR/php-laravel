@@ -22,12 +22,5 @@ class ProductDatabaseSeeder extends Seeder
             'category_code' => 'CA_01',
             'category_name' => 'Random'
         ]);
-
-        Unit::create([
-            'name' => 'Piece',
-            'short_name' => 'PC',
-            'operator' => '*',
-            'operation_value' => 1
-        ]);
     }
 }

@@ -19,11 +19,6 @@
 
 <body class="d-flex align-items-center min-vh-100 bg-light">
 <div class="container">
-    <div class="row">
-        <div class="col-12 d-flex justify-content-center mb-4">
-            <img width="450" src="{{ asset('images/logo1.png') }}" alt="Logo">
-        </div>
-    </div>
     <div class="row justify-content-center">
         <div class="col-md-6 col-lg-5">
             @if(Session::has('account_deactivated'))
@@ -33,9 +28,13 @@
             @endif
             <div class="card p-4 border-0 shadow-sm">
                 <div class="card-body">
-                    <form id="login" method="post" action="{{ url('/login') }}">
+                    <form id="login" method="post" action="{{ url('/login') }}" enctype="multipart/form-data">
                         @csrf
-                        <h1 class="mb-4">Login</h1>
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-center mb-4">
+                                <img width="450" src="{{ asset('images/logo1.png') }}" alt="Logo">
+                            </div>
+                        </div>
                         <p class="text-muted">Sign In to your account</p>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
@@ -67,7 +66,7 @@
                                     Login
                                     <div id="spinner" class="spinner-border text-light" role="status"
                                          style="height: 20px; width: 20px; margin-left: 5px; display: none;">
-                                        <span class="visually-hidden">Loading...</span>
+                                        <span class="visually-hidden"></span>
                                     </div>
                                 </button>
                             </div>
@@ -80,11 +79,6 @@
                     </form>
                 </div>
             </div>
-
-            <p class="text-center mt-5 lead">
-                Developed By
-                <a href="#" class="font-weight-bold text-primary">Aliya Rohaya Siregar</a>
-            </p>
         </div>
     </div>
 </div>

@@ -19,8 +19,6 @@ class HomeController extends Controller
 
     public function index() {
         $sales = Sale::completed()->sum('total_amount');
-        $sale_returns = SaleReturn::completed()->sum('total_amount');
-        $purchase_returns = PurchaseReturn::completed()->sum('total_amount');
         $product_costs = 0;
 
         foreach (Sale::completed()->with('saleDetails')->get() as $sale) {
@@ -31,13 +29,11 @@ class HomeController extends Controller
             }
         }
 
-        $revenue = ($sales - $sale_returns) / 100;
+        $revenue = ($sales) / 100;
         $profit = $revenue - $product_costs;
 
         return view('home', [
             'revenue'          => $revenue,
-            'sale_returns'     => $sale_returns / 100,
-            'purchase_returns' => $purchase_returns / 100,
             'profit'           => $profit
         ]);
     }
@@ -52,14 +48,10 @@ class HomeController extends Controller
         $currentMonthPurchases = Purchase::where('status', 'Completed')->whereMonth('date', date('m'))
                 ->whereYear('date', date('Y'))
                 ->sum('total_amount') / 100;
-        $currentMonthExpenses = Expense::whereMonth('date', date('m'))
-                ->whereYear('date', date('Y'))
-                ->sum('amount') / 100;
 
         return response()->json([
             'sales'     => $currentMonthSales,
             'purchases' => $currentMonthPurchases,
-            'expenses'  => $currentMonthExpenses
         ]);
     }
 
@@ -93,14 +85,6 @@ class HomeController extends Controller
             ->groupBy('month')->orderBy('month')
             ->get()->pluck('amount', 'month');
 
-        $sale_return_payments = SaleReturnPayment::where('date', '>=', $date_range)
-            ->select([
-                DB::raw("DATE_FORMAT(date, '%m-%Y') as month"),
-                DB::raw("SUM(amount) as amount")
-            ])
-            ->groupBy('month')->orderBy('month')
-            ->get()->pluck('amount', 'month');
-
         $purchase_payments = PurchasePayment::where('date', '>=', $date_range)
             ->select([
                 DB::raw("DATE_FORMAT(date, '%m-%Y') as month"),
@@ -109,24 +93,8 @@ class HomeController extends Controller
             ->groupBy('month')->orderBy('month')
             ->get()->pluck('amount', 'month');
 
-        $purchase_return_payments = PurchaseReturnPayment::where('date', '>=', $date_range)
-            ->select([
-                DB::raw("DATE_FORMAT(date, '%m-%Y') as month"),
-                DB::raw("SUM(amount) as amount")
-            ])
-            ->groupBy('month')->orderBy('month')
-            ->get()->pluck('amount', 'month');
-
-        $expenses = Expense::where('date', '>=', $date_range)
-            ->select([
-                DB::raw("DATE_FORMAT(date, '%m-%Y') as month"),
-                DB::raw("SUM(amount) as amount")
-            ])
-            ->groupBy('month')->orderBy('month')
-            ->get()->pluck('amount', 'month');
-
-        $payment_received = array_merge_numeric_values($sale_payments, $purchase_return_payments);
-        $payment_sent = array_merge_numeric_values($purchase_payments, $sale_return_payments, $expenses);
+        $payment_received = array_merge_numeric_values($sale_payments);
+        $payment_sent = array_merge_numeric_values($purchase_payments);
 
         $dates_received = $dates->merge($payment_received);
         $dates_sent = $dates->merge($payment_sent);

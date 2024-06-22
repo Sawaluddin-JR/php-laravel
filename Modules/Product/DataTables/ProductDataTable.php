@@ -51,8 +51,6 @@ class ProductDataTable extends DataTable
                                 <'row'<'col-md-5'i><'col-md-7 mt-2'p>>")
                     ->orderBy(7)
                     ->buttons(
-                        Button::make('excel')
-                            ->text('<i class="bi bi-file-earmark-excel-fill"></i> Excel'),
                         Button::make('print')
                             ->text('<i class="bi bi-printer-fill"></i> Print'),
                         Button::make('reset')
@@ -66,31 +64,31 @@ class ProductDataTable extends DataTable
     {
         return [
             Column::computed('product_image')
-                ->title('Image')
+                ->title('Gambar')
                 ->className('text-center align-middle'),
 
             Column::make('category.category_name')
-                ->title('Category')
+                ->title('Kategori')
                 ->className('text-center align-middle'),
 
             Column::make('product_code')
-                ->title('Code')
+                ->title('Kode')
                 ->className('text-center align-middle'),
 
             Column::make('product_name')
-                ->title('Name')
+                ->title('Nama')
                 ->className('text-center align-middle'),
 
             Column::computed('product_cost')
-                ->title('Cost')
+                ->title('Biaya')
                 ->className('text-center align-middle'),
 
             Column::computed('product_price')
-                ->title('Price')
+                ->title('Harga')
                 ->className('text-center align-middle'),
 
             Column::computed('product_quantity')
-                ->title('Quantity')
+                ->title('Jumlah')
                 ->className('text-center align-middle'),
 
             Column::computed('action')

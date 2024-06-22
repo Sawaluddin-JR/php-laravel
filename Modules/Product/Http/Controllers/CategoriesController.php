@@ -60,7 +60,7 @@ class CategoriesController extends Controller
             'category_name' => $request->category_name,
         ]);
 
-        toast('Product Category Updated!', 'info');
+        toast('Kategori Barang Berhasil Diubah!', 'info');
 
         return redirect()->route('product-categories.index');
     }
@@ -77,7 +77,7 @@ class CategoriesController extends Controller
 
         $category->delete();
 
-        toast('Product Category Deleted!', 'warning');
+        toast('Kategori Barang Berhasil Dihapus!', 'warning');
 
         return redirect()->route('product-categories.index');
     }
