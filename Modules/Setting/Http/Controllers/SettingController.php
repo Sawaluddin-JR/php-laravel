@@ -37,7 +37,7 @@ class SettingController extends Controller
 
         cache()->forget('settings');
 
-        toast('Settings Updated!', 'info');
+        toast('Pengaturan Telah Disimpan!', 'info');
 
         return redirect()->route('settings.index');
     }

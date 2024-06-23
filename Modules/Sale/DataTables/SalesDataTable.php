@@ -69,11 +69,11 @@ class SalesDataTable extends DataTable
                 ->className('text-center align-middle'),
 
             Column::computed('paid_amount')
-                ->title('Dibayar')
+                ->title('Bayar')
                 ->className('text-center align-middle'),
 
             Column::computed('due_amount')
-                ->title('Sisa Bayar')
+                ->title('Kembalian')
                 ->className('text-center align-middle'),
 
             Column::computed('payment_status')
