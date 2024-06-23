@@ -112,7 +112,7 @@ class UsersController extends Controller
 
         $user->delete();
 
-        toast('User Deleted!', 'warning');
+        toast('User Berhasil diHapus!', 'warning');
 
         return redirect()->route('users.index');
     }

@@ -35,8 +35,6 @@ class SuppliersDataTable extends DataTable
                                 <'row'<'col-md-5'i><'col-md-7 mt-2'p>>")
             ->orderBy(4)
             ->buttons(
-                Button::make('excel')
-                    ->text('<i class="bi bi-file-earmark-excel-fill"></i> Excel'),
                 Button::make('print')
                     ->text('<i class="bi bi-printer-fill"></i> Print'),
                 Button::make('reset')
@@ -49,12 +47,15 @@ class SuppliersDataTable extends DataTable
     protected function getColumns() {
         return [
             Column::make('supplier_name')
+                ->title('Nama Supplier')
                 ->className('text-center align-middle'),
 
             Column::make('supplier_email')
+                ->title('Email Supplier')
                 ->className('text-center align-middle'),
 
             Column::make('supplier_phone')
+                ->title('No Hp')
                 ->className('text-center align-middle'),
 
             Column::computed('action')

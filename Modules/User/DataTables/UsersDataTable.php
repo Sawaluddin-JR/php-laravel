@@ -58,8 +58,6 @@ class UsersDataTable extends DataTable
                                 <'row'<'col-md-5'i><'col-md-7 mt-2'p>>")
             ->orderBy(6)
             ->buttons(
-                Button::make('excel')
-                    ->text('<i class="bi bi-file-earmark-excel-fill"></i> Excel'),
                 Button::make('print')
                     ->text('<i class="bi bi-printer-fill"></i> Print'),
                 Button::make('reset')
@@ -72,18 +70,23 @@ class UsersDataTable extends DataTable
     protected function getColumns() {
         return [
             Column::computed('image')
+                ->title('Photo')
                 ->className('text-center align-middle'),
 
             Column::make('name')
+                ->title('Nama')
                 ->className('text-center align-middle'),
 
             Column::make('email')
+                ->title('Email')
                 ->className('text-center align-middle'),
 
             Column::computed('role')
+                ->title('Role')
                 ->className('text-center align-middle'),
 
             Column::computed('status')
+                ->title('Status')
                 ->className('text-center align-middle'),
 
             Column::computed('action')

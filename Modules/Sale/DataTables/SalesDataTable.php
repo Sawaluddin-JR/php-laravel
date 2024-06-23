@@ -60,10 +60,6 @@ class SalesDataTable extends DataTable
 
     protected function getColumns() {
         return [
-            Column::make('reference')
-                ->title('Referensi')
-                ->className('text-center align-middle'),
-
             Column::computed('status')
                 ->title('Status')
                 ->className('text-center align-middle'),

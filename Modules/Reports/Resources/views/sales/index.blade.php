@@ -8,9 +8,3 @@
         <li class="breadcrumb-item active">Sales Report</li>
     </ol>
 @endsection
-
-@section('content')
-    <div class="container-fluid">
-        <livewire:reports.sales-report :customers="\Modules\People\Entities\Customer::all()"/>
-    </div>
-@endsection

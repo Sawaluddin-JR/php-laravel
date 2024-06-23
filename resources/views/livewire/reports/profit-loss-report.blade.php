@@ -47,35 +47,7 @@
                     </div>
                     <div>
                         <div class="text-value text-primary">{{ format_currency($sales_amount) }}</div>
-                        <div class="text-uppercase font-weight-bold small ">{{ $total_sales }} Sales</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{-- Sale Returns --}}
-        <div class="col-12 col-lg-4">
-            <div class="card border-0 shadow-sm">
-                <div class="card-body p-3 d-flex align-items-center">
-                    <div class="bg-primary p-3 mfe-3 rounded">
-                        <i class="bi bi-arrow-return-left font-2xl"></i>
-                    </div>
-                    <div>
-                        <div class="text-value text-primary">{{ format_currency($sale_returns_amount) }}</div>
-                        <div class="text-uppercase font-weight-bold small">{{ $total_sale_returns }} Sale Returns</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{-- Profit --}}
-        <div class="col-12 col-lg-4">
-            <div class="card border-0 shadow-sm">
-                <div class="card-body p-3 d-flex align-items-center">
-                    <div class="bg-primary p-3 mfe-3 rounded">
-                        <i class="bi bi-trophy font-2xl"></i>
-                    </div>
-                    <div>
-                        <div class="text-value text-primary">{{ format_currency($profit_amount) }}</div>
-                        <div class="text-uppercase font-weight-bold small">Profit</div>
+                        <div class="text-uppercase font-weight-bold small ">{{ $total_sales }} Total Penjualan</div>
                     </div>
                 </div>
             </div>
@@ -89,77 +61,21 @@
                     </div>
                     <div>
                         <div class="text-value text-primary">{{ format_currency($purchases_amount) }}</div>
-                        <div class="text-uppercase font-weight-bold small">{{ $total_purchases }} Purchases</div>
+                        <div class="text-uppercase font-weight-bold small">{{ $total_purchases }} Total Pembelian</div>
                     </div>
                 </div>
             </div>
         </div>
-        {{-- Purchase Returns --}}
+        {{-- Profit --}}
         <div class="col-12 col-lg-4">
             <div class="card border-0 shadow-sm">
                 <div class="card-body p-3 d-flex align-items-center">
                     <div class="bg-primary p-3 mfe-3 rounded">
-                        <i class="bi bi-arrow-return-right font-2xl"></i>
+                        <i class="bi bi-trophy font-2xl"></i>
                     </div>
                     <div>
-                        <div class="text-value text-primary">{{ format_currency($purchase_returns_amount) }}</div>
-                        <div class="text-uppercase font-weight-bold small">{{ $total_purchase_returns }} Purchase Returns</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{-- Expenses --}}
-        <div class="col-12 col-lg-4">
-            <div class="card border-0 shadow-sm">
-                <div class="card-body p-3 d-flex align-items-center">
-                    <div class="bg-primary p-3 mfe-3 rounded">
-                        <i class="bi bi-wallet2 font-2xl"></i>
-                    </div>
-                    <div>
-                        <div class="text-value text-primary">{{ format_currency($expenses_amount) }}</div>
-                        <div class="text-uppercase font-weight-bold small">Expenses</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{-- Payments Received --}}
-        <div class="col-12 col-lg-4">
-            <div class="card border-0 shadow-sm">
-                <div class="card-body p-3 d-flex align-items-center">
-                    <div class="bg-primary p-3 mfe-3 rounded">
-                        <i class="bi bi-cash-stack font-2xl"></i>
-                    </div>
-                    <div>
-                        <div class="text-value text-primary">{{ format_currency($payments_received_amount) }}</div>
-                        <div class="text-uppercase font-weight-bold small">Payments Received</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{-- Payments Sent --}}
-        <div class="col-12 col-lg-4">
-            <div class="card border-0 shadow-sm">
-                <div class="card-body p-3 d-flex align-items-center">
-                    <div class="bg-primary p-3 mfe-3 rounded">
-                        <i class="bi bi-cash-stack font-2xl"></i>
-                    </div>
-                    <div>
-                        <div class="text-value text-primary">{{ format_currency($payments_sent_amount) }}</div>
-                        <div class="text-uppercase font-weight-bold small">Payments Sent</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{-- Payments Net --}}
-        <div class="col-12 col-lg-4">
-            <div class="card border-0 shadow-sm">
-                <div class="card-body p-3 d-flex align-items-center">
-                    <div class="bg-primary p-3 mfe-3 rounded">
-                        <i class="bi bi-cash-stack font-2xl"></i>
-                    </div>
-                    <div>
-                        <div class="text-value text-primary">{{ format_currency($payments_net_amount) }}</div>
-                        <div class="text-uppercase font-weight-bold small">Payments Net</div>
+                        <div class="text-value text-primary">{{ format_currency($profit_amount) }}</div>
+                        <div class="text-uppercase font-weight-bold small">Untung / Rugi</div>
                     </div>
                 </div>
             </div>

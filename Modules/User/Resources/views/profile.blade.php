@@ -29,13 +29,13 @@
                             @method('patch')
 
                             <div class="form-group">
-                                <label for="image">Profile Image <span class="text-danger">*</span></label>
+                                <label for="image">Photo Profil <span class="text-danger">*</span></label>
                                 <img style="width: 100px;height: 100px;" class="d-block mx-auto img-thumbnail img-fluid rounded-circle mb-2" src="{{ auth()->user()->getFirstMediaUrl('avatars') }}" alt="Profile Image">
                                 <input id="image" type="file" name="image" data-max-file-size="500KB">
                             </div>
 
                             <div class="form-group">
-                                <label for="name">Name <span class="text-danger">*</span></label>
+                                <label for="name">Nama <span class="text-danger">*</span></label>
                                 <input class="form-control" type="text" name="name" required value="{{ auth()->user()->name }}">
                                 @error('name')
                                 <p class="text-danger">{{ $message }}</p>
@@ -49,7 +49,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Update Profile <i class="bi bi-check"></i></button>
+                                <button type="submit" class="btn btn-primary">Update <i class="bi bi-check"></i></button>
                             </div>
                         </form>
                     </div>
@@ -62,21 +62,21 @@
                             @csrf
                             @method('patch')
                             <div class="form-group">
-                                <label for="current_password">Current Password <span class="text-danger">*</span></label>
+                                <label for="current_password">Password Lama <span class="text-danger">*</span></label>
                                 <input type="password" class="form-control" name="current_password" required>
                                 @error('current_password')
                                 <p class="text-danger">{{ $message }}</p>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="password">New Password <span class="text-danger">*</span></label>
+                                <label for="password">Password Baru <span class="text-danger">*</span></label>
                                 <input class="form-control" type="password" name="password" required>
                                 @error('password')
                                 <p class="text-danger">{{ $message }}</p>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="password_confirmation">Confirm Password <span class="text-danger">*</span></label>
+                                <label for="password_confirmation">Konfirmasi Password <span class="text-danger">*</span></label>
                                 <input class="form-control" type="password" name="password_confirmation" required>
                                 @error('password_confirmation')
                                 <p class="text-danger">{{ $message }}</p>
