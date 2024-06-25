@@ -34,23 +34,19 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
-                                    <div class="from-group">
-                                        <div class="form-group">
-                                            <label for="supplier_id">Supplier <span class="text-danger">*</span></label>
-                                            <select class="form-control" name="supplier_id" id="supplier_id" required>
-                                                @foreach(\Modules\People\Entities\Supplier::all() as $supplier)
-                                                    <option value="{{ $supplier->id }}">{{ $supplier->supplier_name }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
+                                    <div class="form-group">
+                                        <label for="supplier_id">Supplier <span class="text-danger">*</span></label>
+                                        <select class="form-control" name="supplier_id" id="supplier_id" required>
+                                            @foreach(\Modules\People\Entities\Supplier::all() as $supplier)
+                                                <option value="{{ $supplier->id }}">{{ $supplier->supplier_name }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
-                                    <div class="from-group">
-                                        <div class="form-group">
-                                            <label for="date">Tanggal <span class="text-danger">*</span></label>
-                                            <input type="date" class="form-control" name="date" required value="{{ now()->format('Y-m-d') }}">
-                                        </div>
+                                    <div class="form-group">
+                                        <label for="date">Tanggal <span class="text-danger">*</span></label>
+                                        <input type="date" class="form-control" name="date" required value="{{ now()->format('Y-m-d') }}">
                                     </div>
                                 </div>
                             </div>
@@ -69,19 +65,23 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
-                                    <div class="from-group">
-                                        <div class="form-group">
-                                            <label for="payment_method">Metode Pembayaran <span class="text-danger">*</span></label>
-                                            <select class="form-control" name="payment_method" id="payment_method" required>
-                                                <option value="Cash">Cash</option>
-                                                <option value="Bank Transfer">Bank Transfer</option>
-                                            </select>
-                                        </div>
+                                    <div class="form-group">
+                                        <label for="payment_method">Metode Pembayaran <span class="text-danger">*</span></label>
+                                        <select class="form-control" name="payment_method" id="payment_method" required>
+                                            <option value="Cash">Cash</option>
+                                            <option value="Bank Transfer">Bank Transfer</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label for="paid_amount">Jumlah Bayar <span class="text-danger">*</span></label>
+                                        <label for="total_amount">Total <span class="text-danger">*</span></label>
+                                        <input type="number" class="form-control" name="total_amount" id="total_amount" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="paid_amount">DiBayar <span class="text-danger">*</span></label>
                                         <div class="input-group">
                                             <input id="paid_amount" type="text" class="form-control" name="paid_amount" required>
                                             <div class="input-group-append">
@@ -125,12 +125,15 @@
 
             $('#getTotalAmount').click(function () {
                 $('#paid_amount').maskMoney('mask', {{ Cart::instance('purchase')->total() }});
+                $('#total_amount').val({{ Cart::instance('purchase')->total() }});
             });
 
             $('#purchase-form').submit(function () {
                 var paid_amount = $('#paid_amount').maskMoney('unmasked')[0];
                 $('#paid_amount').val(paid_amount);
             });
+
+            $('#total_amount').val({{ Cart::instance('purchase')->total() }});
         });
     </script>
 @endpush

@@ -66,8 +66,14 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label for="paid_amount">Jumlah Bayar <span class="text-danger">*</span></label>
+                                        <label for="paid_amount">DiBayar <span class="text-danger">*</span></label>
                                         <input id="paid_amount" type="text" class="form-control" name="paid_amount" required value="{{ $sale->paid_amount }}" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="total_amount">Total <span class="text-danger">*</span></label>
+                                        <input id="total_amount" type="number" class="form-control" name="total_amount" required value="{{ $purchase->total_amount }}" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -102,6 +108,7 @@
             });
 
             $('#paid_amount').maskMoney('mask');
+            $('#total_amount').maskMoney('mask');
 
             $('#sale-form').submit(function () {
                 var paid_amount = $('#paid_amount').maskMoney('unmasked')[0];

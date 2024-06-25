@@ -78,11 +78,11 @@ class PurchaseDataTable extends DataTable
                 ->className('text-center align-middle'),
 
             Column::computed('paid_amount')
-                ->title('Bayar')
+                ->title('DiBayar')
                 ->className('text-center align-middle'),
 
             Column::computed('due_amount')
-                ->title('Kembalian')
+                ->title('Kekurangan')
                 ->className('text-center align-middle'),
 
             Column::computed('payment_status')

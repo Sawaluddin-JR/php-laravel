@@ -36,8 +36,6 @@ class PurchasePaymentsDataTable extends DataTable
                                 <'row'<'col-md-5'i><'col-md-7 mt-2'p>>")
             ->orderBy(5)
             ->buttons(
-                Button::make('excel')
-                    ->text('<i class="bi bi-file-earmark-excel-fill"></i> Excel'),
                 Button::make('print')
                     ->text('<i class="bi bi-printer-fill"></i> Print'),
                 Button::make('reset')
@@ -50,15 +48,19 @@ class PurchasePaymentsDataTable extends DataTable
     protected function getColumns() {
         return [
             Column::make('date')
+                ->title('Tanggal')
                 ->className('align-middle text-center'),
 
             Column::make('reference')
+                ->title('Referensi')    
                 ->className('align-middle text-center'),
 
             Column::computed('amount')
+                ->title('Jumlah')
                 ->className('align-middle text-center'),
 
             Column::make('payment_method')
+                ->title('Metode Pembayaran')
                 ->className('align-middle text-center'),
 
             Column::computed('action')

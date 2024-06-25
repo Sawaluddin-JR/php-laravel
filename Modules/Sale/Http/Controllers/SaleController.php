@@ -49,7 +49,7 @@ class SaleController extends Controller
             $sale = Sale::create([
                 'date' => $request->date,
                 'paid_amount' => $request->paid_amount * 100,
-                // 'total_amount' => $request->total_amount * 100,
+                'total_amount' => $request->total_amount * 100,
                 'due_amount' => $due_amount * 100,
                 'status' => $request->status,
                 'payment_status' => $payment_status,
@@ -90,17 +90,19 @@ class SaleController extends Controller
             }
         });
 
-        toast('Penjualan Berhasil diTambahkan!', 'success');
+        toast('Sale Created!', 'success');
 
         return redirect()->route('sales.index');
     }
 
 
-    public function show(Sale $sale) {
-        abort_if(Gate::denies('show_sales'), 403);
+    // public function show(Sale $sale) {
+    //     abort_if(Gate::denies('show_sales'), 403);
 
-        return view('sale::show', compact('sale', 'customer'));
-    }
+    //     $customer = Customer::findOrFail($sale->customer_id);
+
+    //     return view('sale::show', compact('sale', 'customer'));
+    // }
 
 
     public function edit(Sale $sale) {
@@ -159,7 +161,7 @@ class SaleController extends Controller
                 'date' => $request->date,
                 'reference' => $request->reference,
                 'paid_amount' => $request->paid_amount * 100,
-                // 'total_amount' => $request->total_amount * 100,
+                'total_amount' => $request->total_amount * 100,
                 'due_amount' => $due_amount * 100,
                 'status' => $request->status,
                 'payment_status' => $payment_status,
@@ -190,7 +192,7 @@ class SaleController extends Controller
             Cart::instance('sale')->destroy();
         });
 
-        toast('Penjualan Berhasil diUbah!', 'info');
+        toast('Sale Updated!', 'info');
 
         return redirect()->route('sales.index');
     }
@@ -201,7 +203,7 @@ class SaleController extends Controller
 
         $sale->delete();
 
-        toast('Penjualan Berhasil diHapus!', 'warning');
+        toast('Sale Deleted!', 'warning');
 
         return redirect()->route('sales.index');
     }

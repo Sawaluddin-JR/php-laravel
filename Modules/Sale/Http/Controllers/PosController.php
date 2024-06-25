@@ -21,7 +21,6 @@ class PosController extends Controller
     public function index() {
         Cart::instance('sale')->destroy();
 
-        $customers = Customer::all();
         $product_categories = Category::all();
 
         return view('sale::pos.index', compact('product_categories', 'customers'));
@@ -43,11 +42,6 @@ class PosController extends Controller
             $sale = Sale::create([
                 'date' => now()->format('Y-m-d'),
                 'reference' => 'PSL',
-                'customer_id' => $request->customer_id,
-                'customer_name' => Customer::findOrFail($request->customer_id)->customer_name,
-                'tax_percentage' => $request->tax_percentage,
-                'discount_percentage' => $request->discount_percentage,
-                'shipping_amount' => $request->shipping_amount * 100,
                 'paid_amount' => $request->paid_amount * 100,
                 'total_amount' => $request->total_amount * 100,
                 'due_amount' => $due_amount * 100,
@@ -55,8 +49,6 @@ class PosController extends Controller
                 'payment_status' => $payment_status,
                 'payment_method' => $request->payment_method,
                 'note' => $request->note,
-                'tax_amount' => Cart::instance('sale')->tax() * 100,
-                'discount_amount' => Cart::instance('sale')->discount() * 100,
             ]);
 
             foreach (Cart::instance('sale')->content() as $cart_item) {
@@ -69,9 +61,6 @@ class PosController extends Controller
                     'price' => $cart_item->price * 100,
                     'unit_price' => $cart_item->options->unit_price * 100,
                     'sub_total' => $cart_item->options->sub_total * 100,
-                    'product_discount_amount' => $cart_item->options->product_discount * 100,
-                    'product_discount_type' => $cart_item->options->product_discount_type,
-                    'product_tax_amount' => $cart_item->options->product_tax * 100,
                 ]);
 
                 $product = Product::findOrFail($cart_item->id);
@@ -93,7 +82,7 @@ class PosController extends Controller
             }
         });
 
-        toast('POS Sale Created!', 'success');
+        toast('POS Penjualan Berhasil DiTambahkan!', 'success');
 
         return redirect()->route('sales.index');
     }

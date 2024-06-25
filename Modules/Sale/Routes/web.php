@@ -20,11 +20,11 @@ Route::group(['middleware' => 'auth'], function () {
     //Generate PDF
     Route::get('/sales/pdf/{id}', function ($id) {
         $sale = \Modules\Sale\Entities\Sale::findOrFail($id);
-        $customer = \Modules\People\Entities\Customer::findOrFail($sale->customer_id);
+        // $customer = \Modules\People\Entities\Customer::findOrFail($sale->customer_id);
 
         $pdf = \PDF::loadView('sale::print', [
             'sale' => $sale,
-            'customer' => $customer,
+            // 'customer' => $customer,
         ])->setPaper('a4');
 
         return $pdf->stream('sale-'. $sale->reference .'.pdf');
