@@ -75,7 +75,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label for="paid_amount">DiBayar <span class="text-danger">*</span></label>
+                                        <label for="paid_amount">Jumlah Bayar <span class="text-danger">*</span></label>
                                         <div class="input-group">
                                             <input id="paid_amount" type="text" class="form-control" name="paid_amount" required>
                                             <div class="input-group-append">

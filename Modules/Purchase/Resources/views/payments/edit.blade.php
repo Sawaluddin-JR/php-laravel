@@ -44,13 +44,13 @@
                             <div class="form-row">
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label for="due_amount">Kekurangan <span class="text-danger">*</span></label>
+                                        <label for="due_amount">Sisa Bayar <span class="text-danger">*</span></label>
                                         <input type="text" class="form-control" name="due_amount" required value="{{ format_currency($purchase->due_amount) }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label for="amount">DiBayar <span class="text-danger">*</span></label>
+                                        <label for="amount">Jumlah <span class="text-danger">*</span></label>
                                         <div class="input-group">
                                             <input id="amount" type="text" class="form-control" name="amount" required value="{{ old('amount') ?? $purchasePayment->amount }}">
                                             <div class="input-group-append">

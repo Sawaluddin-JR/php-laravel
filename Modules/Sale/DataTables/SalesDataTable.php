@@ -61,21 +61,27 @@ class SalesDataTable extends DataTable
     protected function getColumns() {
         return [
             Column::make('reference')
+                ->title('Referensi')
                 ->className('text-center align-middle'),
 
             Column::computed('status')
+                ->title('Status')
                 ->className('text-center align-middle'),
 
             Column::computed('total_amount')
+                ->title('Subtotal')
                 ->className('text-center align-middle'),
 
             Column::computed('paid_amount')
+                ->title('Jumlah Bayar')
                 ->className('text-center align-middle'),
 
             Column::computed('due_amount')
+                ->title('Sisa Bayar')
                 ->className('text-center align-middle'),
 
             Column::computed('payment_status')
+                ->title('Metode Pembayaran')
                 ->className('text-center align-middle'),
 
             Column::computed('action')

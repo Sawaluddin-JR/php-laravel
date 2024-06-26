@@ -18,13 +18,13 @@ use Modules\Sale\Http\Requests\StorePosSaleRequest;
 class PosController extends Controller
 {
 
-    public function index() {
-        Cart::instance('sale')->destroy();
+    // public function index() {
+    //     Cart::instance('sale')->destroy();
 
-        $product_categories = Category::all();
+    //     $product_categories = Category::all();
 
-        return view('sale::pos.index', compact('product_categories', 'customers'));
-    }
+    //     return view('sale::pos.index', compact('product_categories', 'customers'));
+    // }
 
 
     public function store(StorePosSaleRequest $request) {

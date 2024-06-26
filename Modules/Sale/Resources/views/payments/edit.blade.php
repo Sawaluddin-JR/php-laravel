@@ -44,7 +44,7 @@
                             <div class="form-row">
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label for="due_amount">Kekurangan <span class="text-danger">*</span></label>
+                                        <label for="due_amount">Sisa Bayar <span class="text-danger">*</span></label>
                                         <input type="text" class="form-control" name="due_amount" required value="{{ format_currency($sale->due_amount) }}" readonly>
                                     </div>
                                 </div>

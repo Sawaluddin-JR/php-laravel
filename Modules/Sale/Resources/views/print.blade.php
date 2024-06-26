@@ -30,8 +30,8 @@
                         </div>
 
                         <div class="col-xs-4 mb-3 mb-md-0">
-                            <h4 class="mb-2" style="border-bottom: 1px solid #dddddd;padding-bottom: 10px;">Invoice Info:</h4>
-                            <div>Invoice: <strong>INV/{{ $sale->reference }}</strong></div>
+                            <h4 class="mb-2" style="border-bottom: 1px solid #dddddd;padding-bottom: 10px;">Info Faktur:</h4>
+                            <div>Faktur: <strong>INV/{{ $sale->reference }}</strong></div>
                             <div>Tanggal: {{ \Carbon\Carbon::parse($sale->date)->format('d M, Y') }}</div>
                             <div>
                                 Status: <strong>{{ $sale->status }}</strong>
@@ -48,9 +48,9 @@
                             <thead>
                             <tr>
                                 <th class="align-middle">Barang</th>
-                                <th class="align-middle">Harga</th>
+                                <th class="align-middle">Harga/Unit</th>
                                 <th class="align-middle">Jumlah</th>
-                                <th class="align-middle">Sub Total</th>
+                                <th class="align-middle">Subtotal</th>
                             </tr>
                             </thead>
                             <tbody>
