@@ -63,7 +63,7 @@
                             <div class="form-group">
                                 <label for="role">Role <span class="text-danger">*</span></label>
                                 <select class="form-control" name="role" id="role" required>
-                                    <option value="" selected disabled>Select Role</option>
+                                    <option value="" selected disabled>Pilih Role</option>
                                     @foreach(\Spatie\Permission\Models\Role::where('name', '!=', 'Super Admin')->get() as $role)
                                         <option value="{{ $role->name }}">{{ $role->name }}</option>
                                     @endforeach
@@ -73,7 +73,7 @@
                             <div class="form-group">
                                 <label for="is_active">Status <span class="text-danger">*</span></label>
                                 <select class="form-control" name="is_active" id="is_active" required>
-                                    <option value="" selected disabled>Select Status</option>
+                                    <option value="" selected disabled>Pilih Status</option>
                                     <option value="1">Active</option>
                                     <option value="2">Deactive</option>
                                 </select>

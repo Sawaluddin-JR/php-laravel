@@ -47,7 +47,7 @@ class SalesDataTable extends DataTable
             ->dom("<'row'<'col-md-3'l><'col-md-5 mb-2'B><'col-md-4'f>> .
                                 'tr' .
                                 <'row'<'col-md-5'i><'col-md-7 mt-2'p>>")
-            ->orderBy(8)
+            ->orderBy(7)
             ->buttons(
                 Button::make('print')
                     ->text('<i class="bi bi-printer-fill"></i> Print'),
@@ -81,7 +81,7 @@ class SalesDataTable extends DataTable
                 ->className('text-center align-middle'),
 
             Column::computed('payment_status')
-                ->title('Metode Pembayaran')
+                ->title('Status Pembayaran')
                 ->className('text-center align-middle'),
 
             Column::computed('action')

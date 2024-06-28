@@ -34,24 +34,24 @@ class SalesReturnReport extends Component
         $this->payment_status = '';
     }
 
-    public function render() {
-        $sale_returns = SaleReturn::whereDate('date', '>=', $this->start_date)
-            ->whereDate('date', '<=', $this->end_date)
-            ->when($this->customer_id, function ($query) {
-                return $query->where('customer_id', $this->customer_id);
-            })
-            ->when($this->sale_return_status, function ($query) {
-                return $query->where('status', $this->sale_return_status);
-            })
-            ->when($this->payment_status, function ($query) {
-                return $query->where('payment_status', $this->payment_status);
-            })
-            ->orderBy('date', 'desc')->paginate(10);
+    // public function render() {
+    //     $sale_returns = SaleReturn::whereDate('date', '>=', $this->start_date)
+    //         ->whereDate('date', '<=', $this->end_date)
+    //         ->when($this->customer_id, function ($query) {
+    //             return $query->where('customer_id', $this->customer_id);
+    //         })
+    //         ->when($this->sale_return_status, function ($query) {
+    //             return $query->where('status', $this->sale_return_status);
+    //         })
+    //         ->when($this->payment_status, function ($query) {
+    //             return $query->where('payment_status', $this->payment_status);
+    //         })
+    //         ->orderBy('date', 'desc')->paginate(10);
 
-        return view('livewire.reports.sales-return-report', [
-            'sale_returns' => $sale_returns
-        ]);
-    }
+    //     return view('livewire.reports.sales-return-report', [
+    //         'sale_returns' => $sale_returns
+    //     ]);
+    // }
 
     public function generateReport() {
         $this->validate();

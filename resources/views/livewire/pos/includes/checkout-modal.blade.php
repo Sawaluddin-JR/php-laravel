@@ -31,29 +31,26 @@
                             <div class="form-row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label for="total_amount">Total Amount <span class="text-danger">*</span></label>
+                                        <label for="total_amount">Subtotal <span class="text-danger">*</span></label>
                                         <input id="total_amount" type="text" class="form-control" name="total_amount" value="{{ $total_amount }}" readonly required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label for="paid_amount">Received Amount <span class="text-danger">*</span></label>
+                                        <label for="paid_amount">Jumlah Diterima <span class="text-danger">*</span></label>
                                         <input id="paid_amount" type="text" class="form-control" name="paid_amount" value="{{ $total_amount }}" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="payment_method">Payment Method <span class="text-danger">*</span></label>
+                                <label for="payment_method">Metode Pembayaran <span class="text-danger">*</span></label>
                                 <select class="form-control" name="payment_method" id="payment_method" required>
                                     <option value="Cash">Cash</option>
-                                    <option value="Credit Card">Credit Card</option>
                                     <option value="Bank Transfer">Bank Transfer</option>
-                                    <option value="Cheque">Cheque</option>
-                                    <option value="Other">Other</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="note">Note (If Needed)</label>
+                                <label for="note">Catatan</label>
                                 <textarea name="note" id="note" rows="5" class="form-control"></textarea>
                             </div>
                         </div>
@@ -61,7 +58,7 @@
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <tr>
-                                        <th>Total Products</th>
+                                        <th>Total Barang</th>
                                         <td>
                                                 <span class="badge badge-success">
                                                     {{ Cart::instance($cart_instance)->count() }}

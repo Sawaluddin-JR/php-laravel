@@ -31,11 +31,11 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg pt-0">
             <div class="dropdown-header bg-light">
-                <strong>{{ $low_quantity_products->count() }} Notifications</strong>
+                <strong>{{ $low_quantity_products->count() }} Notifikasi</strong>
             </div>
             @forelse($low_quantity_products as $product)
                 <a class="dropdown-item" href="{{ route('products.show', $product->id) }}">
-                    <i class="bi bi-hash mr-1 text-primary"></i> Product: "{{ $product->product_code }}" is low in quantity!
+                    <i class="bi bi-hash mr-1 text-primary"></i> Barang: "{{ $product->product_code }}" is low in quantity!
                 </a>
             @empty
                 <a class="dropdown-item" href="#">
@@ -58,12 +58,12 @@
             </div>
         </a>
         <div class="dropdown-menu dropdown-menu-right pt-0">
-            <div class="dropdown-header bg-light py-2"><strong>Account</strong></div>
+            <div class="dropdown-header bg-light py-2"><strong>Akun</strong></div>
             <a class="dropdown-item" href="{{ route('profile.edit') }}">
-                <i class="mfe-2  bi bi-person" style="font-size: 1.2rem;"></i> Profile
+                <i class="mfe-2  bi bi-person" style="font-size: 1.2rem;"></i> Profil
             </a>
             <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                <i class="mfe-2  bi bi-box-arrow-left" style="font-size: 1.2rem;"></i> Logout
+                <i class="mfe-2  bi bi-box-arrow-left" style="font-size: 1.2rem;"></i> Keluar
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                 @csrf

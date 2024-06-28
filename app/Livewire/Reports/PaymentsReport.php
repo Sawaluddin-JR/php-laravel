@@ -67,12 +67,8 @@ class PaymentsReport extends Component
     public function getQuery() {
         if ($this->payments == 'sale') {
             $this->query = SalePayment::query()->with('sale');
-        } elseif ($this->payments == 'sale_return') {
-            $this->query = SaleReturnPayment::query()->with('saleReturn');
         } elseif ($this->payments == 'purchase') {
             $this->query = PurchasePayment::query()->with('purchase');
-        } elseif ($this->payments == 'purchase_return') {
-            $this->query = PurchaseReturnPayment::query()->with('purchaseReturn');
         } else {
             $this->query = null;
         }

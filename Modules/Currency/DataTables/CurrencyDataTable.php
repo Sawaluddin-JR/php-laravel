@@ -34,8 +34,6 @@ class CurrencyDataTable extends DataTable
                                         <'row'<'col-md-5'i><'col-md-7 mt-2'p>>")
             ->orderBy(6)
             ->buttons(
-                Button::make('excel')
-                    ->text('<i class="bi bi-file-earmark-excel-fill"></i> Excel'),
                 Button::make('print')
                     ->text('<i class="bi bi-printer-fill"></i> Print'),
                 Button::make('reset')
@@ -48,12 +46,15 @@ class CurrencyDataTable extends DataTable
     protected function getColumns() {
         return [
             Column::make('currency_name')
+                ->title('Nama mata uang')
                 ->className('text-center align-middle'),
 
             Column::make('code')
+                ->title('Kode')
                 ->className('text-center align-middle'),
 
             Column::make('symbol')
+                ->title('Simbol')
                 ->className('text-center align-middle'),
 
             Column::make('thousand_separator')

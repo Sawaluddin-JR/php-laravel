@@ -19,11 +19,11 @@
             <table class="table table-bordered">
                 <thead class="thead-dark">
                 <tr>
-                    <th class="align-middle">Nama</th>
-                    <th class="align-middle text-center">Harga</th>
+                    <th class="align-middle">Barang</th>
+                    <th class="align-middle text-center">Harga/Unit</th>
                     <th class="align-middle text-center">Stok</th>
                     <th class="align-middle text-center">Jumlah</th>
-                    <th class="align-middle text-center">Sub Total</th>
+                    <th class="align-middle text-center">Subtotal</th>
                     <th class="align-middle text-center">Action</th>
                 </tr>
                 </thead>
@@ -70,7 +70,7 @@
                         <tr>
                             <td colspan="8" class="text-center">
                         <span class="text-danger">
-                            Please search & select products!
+                            Silahkan cari & pilih barang!
                         </span>
                             </td>
                         </tr>

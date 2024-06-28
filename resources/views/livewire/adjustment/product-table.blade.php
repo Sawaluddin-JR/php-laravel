@@ -12,18 +12,18 @@
     <div class="table-responsive">
         <div wire:loading.flex class="col-12 position-absolute justify-content-center align-items-center" style="top:0;right:0;left:0;bottom:0;background-color: rgba(255,255,255,0.5);z-index: 99;">
             <div class="spinner-border text-primary" role="status">
-                <span class="sr-only">Loading...</span>
+                <span class="sr-only"></span>
             </div>
         </div>
         <table class="table table-bordered">
             <thead>
             <tr class="align-middle">
                 <th class="align-middle">#</th>
-                <th class="align-middle">Product Name</th>
-                <th class="align-middle">Code</th>
-                <th class="align-middle">Stock</th>
-                <th class="align-middle">Quantity</th>
-                <th class="align-middle">Type</th>
+                <th class="align-middle">Nama Barang</th>
+                <th class="align-middle">Kode</th>
+                <th class="align-middle">Stok</th>
+                <th class="align-middle">Jumlah</th>
+                <th class="align-middle">Tipe</th>
                 <th class="align-middle">Action</th>
             </tr>
             </thead>
@@ -74,7 +74,7 @@
                 <tr>
                     <td colspan="7" class="text-center">
                         <span class="text-danger">
-                            Please search & select products!
+                            Silahkan cari & pilih barang!
                         </span>
                     </td>
                 </tr>

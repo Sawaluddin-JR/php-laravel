@@ -34,7 +34,7 @@
                             <div class="form-row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label for="name">Name <span class="text-danger">*</span></label>
+                                        <label for="name">Nama <span class="text-danger">*</span></label>
                                         <input class="form-control" type="text" name="name" required value="{{ $user->name }}">
                                     </div>
                                 </div>
@@ -69,7 +69,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="image">Profile Image <span class="text-danger">*</span></label>
+                                <label for="image">Photo Profile <span class="text-danger">*</span></label>
                                 <img style="width: 100px;height: 100px;" class="d-block mx-auto img-thumbnail img-fluid rounded-circle mb-2" src="{{ $user->getFirstMediaUrl('avatars') }}" alt="Profile Image">
                                 <input id="image" type="file" name="image" data-max-file-size="500KB">
                             </div>

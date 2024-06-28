@@ -22,7 +22,7 @@
                             </a>
                         </div>
                         <select wire:model.live="customer_id" id="customer_id" class="form-control">
-                            <option value="" selected>Select Customer</option>
+                            <option value="" selected>Pilih Customer</option>
                             @foreach($customers as $customer)
                                 <option value="{{ $customer->id }}">{{ $customer->customer_name }}</option>
                             @endforeach
@@ -34,9 +34,9 @@
                     <table class="table">
                         <thead>
                         <tr class="text-center">
-                            <th class="align-middle">Product</th>
-                            <th class="align-middle">Price</th>
-                            <th class="align-middle">Quantity</th>
+                            <th class="align-middle">Barang</th>
+                            <th class="align-middle">Harga</th>
+                            <th class="align-middle">Jumlah</th>
                             <th class="align-middle">Action</th>
                         </tr>
                         </thead>
@@ -71,7 +71,7 @@
                             <tr>
                                 <td colspan="8" class="text-center">
                         <span class="text-danger">
-                            Please search & select products!
+                            Silahkan cari & pilih barang!
                         </span>
                                 </td>
                             </tr>
@@ -81,7 +81,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
                         <table class="table table-striped">
@@ -110,9 +110,9 @@
                         </table>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="form-row">
+            <!-- <div class="form-row">
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label for="tax_percentage">Order Tax (%)</label>
@@ -131,7 +131,7 @@
                         <input wire:model.blur="shipping" type="number" class="form-control" min="0" value="0" required step="0.01">
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="form-group d-flex justify-content-center flex-wrap mb-0">
                 <button wire:click="resetCart" type="button" class="btn btn-pill btn-danger mr-3"><i class="bi bi-x"></i> Reset</button>
